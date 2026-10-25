@@ -4,7 +4,7 @@ import com.google.gson.TypeAdapter;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import fr.maxlego08.head.ZHead;
+import fr.maxlego08.head.HeadImpl;
 import fr.maxlego08.head.api.Head;
 import fr.maxlego08.head.api.enums.HeadCategory;
 import fr.maxlego08.head.zcore.logger.Logger;
@@ -59,6 +59,6 @@ public class HeadAdapter extends TypeAdapter<Head> {
             }
         }
         in.endObject();
-        return new ZHead(id, name, value, tags, headCategory);
+        return new HeadImpl(id, name, value, tags, headCategory);
     }
 }

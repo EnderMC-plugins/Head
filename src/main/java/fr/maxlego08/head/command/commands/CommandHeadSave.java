@@ -17,7 +17,7 @@ public class CommandHeadSave extends VCommand {
 
     public CommandHeadSave(HeadPlugin plugin) {
         super(plugin);
-        this.setPermission(Permission.ZHEAD_SAVE);
+        this.setPermission(Permission.HEAD_SAVE);
         this.addSubCommand("save");
         this.setDescription(Message.DESCRIPTION_SAVE);
         this.onlyPlayers();

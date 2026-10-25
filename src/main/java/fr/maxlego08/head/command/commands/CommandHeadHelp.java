@@ -10,7 +10,7 @@ public class CommandHeadHelp extends VCommand {
 
 	public CommandHeadHelp(HeadPlugin plugin) {
 		super(plugin);
-		this.setPermission(Permission.ZHEAD_HELP);
+		this.setPermission(Permission.HEAD_HELP);
 		this.addSubCommand("help");
 		this.setDescription(Message.DESCRIPTION_HELP);
 	}

@@ -10,7 +10,7 @@ public class CommandHead extends VCommand {
 
     public CommandHead(HeadPlugin plugin) {
         super(plugin);
-        this.setPermission(Permission.ZHEAD_USE);
+        this.setPermission(Permission.HEAD_USE);
         this.addSubCommand(new CommandHeadReload(plugin));
         this.addSubCommand(new CommandHeadHelp(plugin));
         this.addSubCommand(new CommandHeadGive(plugin));
@@ -19,6 +19,7 @@ public class CommandHead extends VCommand {
         this.addSubCommand(new CommandHeadInfo(plugin));
         this.addSubCommand(new CommandHeadRandom(plugin));
         this.addSubCommand(new CommandHeadSave(plugin));
+        this.addSubCommand(new CommandHeadPlayers(plugin));
         this.onlyPlayers();
     }
 

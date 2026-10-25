@@ -1,93 +1,37 @@
 ########################################################################################################################
 #
-# ███████╗██╗░░██╗███████╗░█████╗░██████╗░
-# ╚════██║██║░░██║██╔════╝██╔══██╗██╔══██╗
-# ░░███╔═╝███████║█████╗░░███████║██║░░██║
-# ██╔══╝░░██╔══██║██╔══╝░░██╔══██║██║░░██║
-# ███████╗██║░░██║███████╗██║░░██║██████╔╝
-# ╚══════╝╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═════╝░
+# ██╗░░██╗███████╗░█████╗░██████╗░
+# ██║░░██║██╔════╝██╔══██╗██╔══██╗
+# ███████║█████╗░░███████║██║░░██║
+# ██╔══██║██╔══╝░░██╔══██║██║░░██║
+# ██║░░██║███████╗██║░░██║██████╔╝
+# ╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═════╝░
 #
 # We would like to extend our heartfelt thanks to Minecraft-Heads.com for providing their API, which has been an invaluable source of all the data used in our project.
 # https://minecraft-heads.com/
 #
-# Looking for a Premium version of zHead ? We recommend HeadDataBase: https://www.spigotmc.org/resources/head-database.14280/
-#
-# Sponsor: https://minecraft-inventory-builder.com/ - Online inventory editor
-#
-# Spigot: https://www.spigotmc.org/resources/zhead-database.115717/
-# Github: https://github.com/Maxlego08/zHead
-#
-# Looking for an inventory plugin compatible with zHead? Use zMenu: https://www.spigotmc.org/resources/110402/
-#
 # Commands:
-# /zhead - zhead.use - Display commands
-# /zhead help - zhead.help - Show help commands
-# /zhead version - - Show plugin version
-# /zhead reload - zhead.reload - Reload configurations files
-# /zhead give <id> [<amount>] [<player>] - zhead.give - Give a head
-# /zhead search <value> - zhead.search - Search heads
-# /zhead info - zhead.info - Get head informations
-# /zhead save - zhead.save - Save head informations
-# /zhead random [<amount>] [<player>] - zhead.random - Get a random head
+# /head - head.use - Display commands
+# /head help - head.help - Show help commands
+# /head version - - Show plugin version
+# /head reload - head.reload - Reload configurations files
+# /head give <id> [<amount>] [<player>] - head.give - Give a head
+# /head search <value> - head.search - Search heads
+# /head info - head.info - Get head informations
+# /head save - head.save - Save head informations
+# /head random [<amount>] [<player>] - head.random - Get a random head
+# /head players - head.players - Show the heads of all players
+# /skull <player> - head.player.head - Get a player's head
+# /skullstatic <player> - head.player.head.static - Get a player's head that keeps the current skin
 #
 # Placeholders:
-# %zhead_count% - Displays the total of heads
-# %zhead_count_format% - Displays the total of heads with a format
-# %zhead_category_count_<category>% - Displays the total of heads for a category
-# %zhead_category_count_format_<category>% - Displays the total of heads for a category with a format
+# %head_count% - Displays the total of heads
+# %head_count_format% - Displays the total of heads with a format
+# %head_category_count_<category>% - Displays the total of heads for a category
+# %head_category_count_format_<category>% - Displays the total of heads for a category with a format
 #
 ########################################################################################################################
 
-category:
-  alphabet: Alphabet
-  animals: Animals
-  blocks: Blocks
-  decoration: Decoration
-  food_drinks: Food and Drinks
-  humans: Humans
-  humanoid: Humanoid
-  miscellaneous: Miscellaneous
-  monsters: Monsters
-  plants: Plants
-
-inventory:
-  back: "&cBack to main menu"
-  page: "&cPage %page%"
-  heads:
-    name: '&czHead &8%count% heads'
-    item:
-      name: "&c&l%category%"
-      lore:
-        - "&f%count% &7heads"
-    refresh:
-      name: "&c&lRefresh"
-      lore:
-        - "&8Click to refresh the heads database"
-    informations:
-      name: "&e&lInformations"
-      lore:
-        - ""
-        - "&f%amount% &7heads"
-        - "&7Updated at&8: &f%updated%"
-        - ""
-        - "&b/zhb &8<&7head&8> &8[<&7amount&8>] [<&7player&8>]"
-        - "&b/zhb search &8<&7value&8>"
-        - ""
-        - "&8Credit: &7minecraft-heads.com"
-  pagination:
-    name: "&c%category% &8%count% heads"
-    item:
-      name: "&f%name%"
-      lore:
-        - "&8%category%"
-        - "&8%tags%"
-        - "&fID&8: &7%id%"
-        - ""
-        - "&f&nLeft click&r&7 to get head"
-        - "&f&nRight click&r&7 to display information"
-    search:
-      name: "&cSearch for heads"
-      lore:
-        - "&7/zhd search <value>"
-  search:
-    name: "&cSearch &8%count% heads"
+# Language of all messages and inventories (en = English, de = Deutsch, fr = Francais)
+# The texts are in plugins/Head/lang/<language>.json
+language: en

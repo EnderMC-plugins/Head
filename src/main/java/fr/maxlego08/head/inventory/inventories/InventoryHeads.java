@@ -32,7 +32,7 @@ public class InventoryHeads extends VInventory {
 
         createInventory(color(getMessage(Config.headInventoryName, "%count%", simplifyNumber(counts))), 54);
 
-        if (hasPermission(player, Permission.ZHEAD_REFRESH)) {
+        if (hasPermission(player, Permission.HEAD_REFRESH)) {
             displayRefresh();
         }
         displayDecoration();

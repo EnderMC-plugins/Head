@@ -11,7 +11,7 @@ public class CommandHeadGive extends VCommand {
 
 	public CommandHeadGive(HeadPlugin plugin) {
 		super(plugin);
-		this.setPermission(Permission.ZHEAD_GIVE);
+		this.setPermission(Permission.HEAD_GIVE);
 		this.addSubCommand("give", "g");
 		this.setDescription(Message.DESCRIPTION_GIVE);
 		this.addRequireArg("head id");

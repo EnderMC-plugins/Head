@@ -44,6 +44,7 @@ import org.bukkit.profile.PlayerTextures;
 import java.lang.reflect.Field;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
@@ -939,6 +940,48 @@ public abstract class ZUtils extends MessageUtils {
                 itemStack.setItemMeta(meta);
             }
         }
+        return itemStack;
+    }
+
+    /**
+     * Creates a player head with the skin saved inside the item,
+     * so the head stays the same when the player changes his skin
+     *
+     * @param name    Player name
+     * @param skinUrl Url of the skin, see {@link PlayerSkin#getSkinUrl(OfflinePlayer)}
+     * @return itemstack
+     */
+    public ItemStack staticPlayerHead(String name, String skinUrl) {
+        ItemStack itemStack = playerHead();
+        SkullMeta meta = (SkullMeta) itemStack.getItemMeta();
+
+        // Not the uuid of the player, so the server never loads the new skin. Same skin, same uuid: the heads can be stacked
+        UUID uuid = UUID.nameUUIDFromBytes(skinUrl.getBytes(StandardCharsets.UTF_8));
+
+        if (NmsVersion.nmsVersion.isNewHeadApi()) {
+            PlayerProfile profile = Bukkit.createPlayerProfile(uuid, name);
+            PlayerTextures textures = profile.getTextures();
+            try {
+                textures.setSkin(new URL(skinUrl));
+            } catch (MalformedURLException exception) {
+                throw new RuntimeException("Invalid URL", exception);
+            }
+            profile.setTextures(textures);
+            meta.setOwnerProfile(profile);
+        } else {
+            GameProfile profile = new GameProfile(uuid, name);
+            String texture = Base64.getEncoder().encodeToString(("{\"textures\":{\"SKIN\":{\"url\":\"" + skinUrl + "\"}}}").getBytes(StandardCharsets.UTF_8));
+            profile.getProperties().put("textures", new Property("textures", texture));
+            try {
+                Field profileField = meta.getClass().getDeclaredField("profile");
+                profileField.setAccessible(true);
+                profileField.set(meta, profile);
+            } catch (NoSuchFieldException | IllegalAccessException exception) {
+                exception.printStackTrace();
+            }
+        }
+
+        itemStack.setItemMeta(meta);
         return itemStack;
     }
 

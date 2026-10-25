@@ -1,4 +1,4 @@
-# zHead Database
+# Head Database
 
 We would like to extend our heartfelt thanks to [Minecraft-Heads.com](https://minecraft-heads.com/) for providing their API, which has been an invaluable source of all the data used in our project.
 

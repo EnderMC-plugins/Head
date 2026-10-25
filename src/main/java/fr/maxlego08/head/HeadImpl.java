@@ -3,7 +3,7 @@ package fr.maxlego08.head;
 import fr.maxlego08.head.api.Head;
 import fr.maxlego08.head.api.enums.HeadCategory;
 
-public class ZHead implements Head {
+public class HeadImpl implements Head {
 
     private final String id;
     private final String name;
@@ -11,7 +11,7 @@ public class ZHead implements Head {
     private final String tags;
     private final HeadCategory headCategory;
 
-    public ZHead(String id, String name, String value, String tags, HeadCategory headCategory) {
+    public HeadImpl(String id, String name, String value, String tags, HeadCategory headCategory) {
         this.id = id;
         this.name = name;
         this.value = value;

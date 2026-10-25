@@ -11,7 +11,7 @@ public class CommandHeadReload extends VCommand {
 
 	public CommandHeadReload(HeadPlugin plugin) {
 		super(plugin);
-		this.setPermission(Permission.ZHEAD_RELOAD);
+		this.setPermission(Permission.HEAD_RELOAD);
 		this.addSubCommand("reload", "rl");
 		this.setDescription(Message.DESCRIPTION_RELOAD);
 	}

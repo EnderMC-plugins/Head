@@ -25,6 +25,14 @@ public class Config {
     public static String backItemName;
     public static String pageItemName;
 
+    public static String playersOnlineInventoryName;
+    public static String playersOfflineInventoryName;
+    public static ItemConfiguration playersOnlineItem;
+    public static ItemConfiguration playersOfflineItem;
+    public static ItemConfiguration playerHeadItem;
+    public static ItemConfiguration previousPageItem;
+    public static ItemConfiguration nextPageItem;
+
     /**
      * static Singleton instance.
      */
@@ -54,22 +62,35 @@ public class Config {
 
     public void loadConfiguration(HeadPlugin plugin) {
         FileConfiguration configuration = plugin.getConfig();
+
+        Lang lang = new Lang(plugin, configuration.getString("language", "en"));
+        lang.applyMessages();
+
         for (HeadCategory headCategory : HeadCategory.values()) {
-            categoryNames.put(headCategory, configuration.getString("category." + headCategory.name().toLowerCase(), headCategory.getName()));
+            String categoryName = lang.getString("category." + headCategory.name().toLowerCase());
+            categoryNames.put(headCategory, categoryName == null ? headCategory.getName() : categoryName);
         }
 
-        headInventoryName = configuration.getString("inventory.heads.name");
-        headItem = new ItemConfiguration(configuration.getString("inventory.heads.item.name"), configuration.getStringList("inventory.heads.item.lore"));
-        refreshItem = new ItemConfiguration(configuration.getString("inventory.heads.refresh.name"), configuration.getStringList("inventory.heads.refresh.lore"));
-        informationItem = new ItemConfiguration(configuration.getString("inventory.heads.informations.name"), configuration.getStringList("inventory.heads.informations.lore"));
+        headInventoryName = lang.getString("inventory.heads.name");
+        headItem = new ItemConfiguration(lang.getString("inventory.heads.item.name"), lang.getStringList("inventory.heads.item.lore"));
+        refreshItem = new ItemConfiguration(lang.getString("inventory.heads.refresh.name"), lang.getStringList("inventory.heads.refresh.lore"));
+        informationItem = new ItemConfiguration(lang.getString("inventory.heads.informations.name"), lang.getStringList("inventory.heads.informations.lore"));
 
-        paginationInventoryName = configuration.getString("inventory.pagination.name");
-        paginateItem = new ItemConfiguration(configuration.getString("inventory.pagination.item.name"), configuration.getStringList("inventory.pagination.item.lore"));
-        searchItem = new ItemConfiguration(configuration.getString("inventory.pagination.search.name"), configuration.getStringList("inventory.pagination.search.lore"));
+        paginationInventoryName = lang.getString("inventory.pagination.name");
+        paginateItem = new ItemConfiguration(lang.getString("inventory.pagination.item.name"), lang.getStringList("inventory.pagination.item.lore"));
+        searchItem = new ItemConfiguration(lang.getString("inventory.pagination.search.name"), lang.getStringList("inventory.pagination.search.lore"));
 
-        searchInventoryName = configuration.getString("inventory.search.name");
+        searchInventoryName = lang.getString("inventory.search.name");
 
-        backItemName = configuration.getString("inventory.back");
-        pageItemName = configuration.getString("inventory.page");
+        backItemName = lang.getString("inventory.back");
+        pageItemName = lang.getString("inventory.page");
+
+        playersOnlineInventoryName = lang.getString("inventory.players.online.title");
+        playersOfflineInventoryName = lang.getString("inventory.players.offline.title");
+        playersOnlineItem = new ItemConfiguration(lang.getString("inventory.players.online.name"), lang.getStringList("inventory.players.online.lore"));
+        playersOfflineItem = new ItemConfiguration(lang.getString("inventory.players.offline.name"), lang.getStringList("inventory.players.offline.lore"));
+        playerHeadItem = new ItemConfiguration(lang.getString("inventory.players.head.name"), lang.getStringList("inventory.players.head.lore"));
+        previousPageItem = new ItemConfiguration(lang.getString("inventory.players.previous.name"), lang.getStringList("inventory.players.previous.lore"));
+        nextPageItem = new ItemConfiguration(lang.getString("inventory.players.next.name"), lang.getStringList("inventory.players.next.lore"));
     }
 }

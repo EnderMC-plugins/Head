@@ -1,0 +1,173 @@
+{
+  "messages": {
+    "prefix": "&8[&aHead&8] ",
+
+    "teleport_move": "&cVous ne devez pas bouger !",
+    "teleport_message": "&7Téléportation dans &3%second% &7secondes !",
+    "teleport_error": "&cVous avez déjà une téléportation en cours !",
+    "teleport_success": "&7Téléportation effectuée !",
+    "inventory_clone_null": "&cLe clone de l'inventaire est nul !",
+    "inventory_open_error": "&cUne erreur est survenue lors de l'ouverture de l'inventaire &6%id%&c.",
+
+    "time_day": "%02d %day% %02d %hour% %02d %minute% %02d %second%",
+    "time_hour": "%02d %hour% %02d %minute% %02d %second%",
+    "time_minute": "%02d %minute% %02d %second%",
+    "time_second": "%02d %second%",
+    "format_second": "seconde",
+    "format_seconds": "secondes",
+    "format_minute": "minute",
+    "format_minutes": "minutes",
+    "format_hour": "heure",
+    "format_hours": "heures",
+    "format_day": "jour",
+    "format_days": "jours",
+
+    "command_syntax_error": "&cVous devez exécuter la commande comme ceci&7: &a%syntax%",
+    "command_no_permission": "&cVous n'avez pas la permission d'exécuter cette commande.",
+    "command_no_console": "&cSeul un joueur peut exécuter cette commande.",
+    "command_no_arg": "&cImpossible de trouver une commande avec ces arguments.",
+    "command_syntax_help": "&f%syntax% &7» &7%description%",
+
+    "description_help": "Afficher les commandes",
+    "description_version": "Afficher la version du plugin",
+    "description_reload": "Recharger les fichiers de configuration",
+    "description_give": "Donner une tête",
+    "description_search": "Rechercher des têtes",
+    "description_info": "Obtenir les informations d'une tête",
+    "description_save": "Sauvegarder les informations d'une tête",
+    "description_random": "Obtenir une tête aléatoire",
+    "description_players": "Afficher les têtes de tous les joueurs",
+
+    "reload": "&aVous venez de recharger les fichiers de configuration.",
+    "refresh": "&aLes données sont en cours de mise à jour, veuillez patienter.",
+    "give": "&aVous venez de recevoir la tête &f%name% &8(&7%id%&8)",
+    "give_head": "&aVous venez de recevoir la tête de &f%name%&a.",
+    "skin_not_found": "&cLe skin de &f%name% &cest introuvable.",
+    "not_found": "&cImpossible de trouver une tête avec l'id&8: &f%id%",
+    "open_no_permission": "&cVous n'avez pas la permission d'ouvrir cette catégorie.",
+
+    "info_messages": [
+      "&fCatégorie&8: &7%category%",
+      "&fTags&8: &7%tags%",
+      "&fID&8: &7%id%",
+      "&fAvec zMenu&8: &7material: zhd:%id%"
+    ],
+    "info_copy": "&bCliquez ici pour copier le code base64",
+    "info_hover": "&7Cliquez ici pour copier le code base64",
+    "info_error_air": "&cNon, l'air n'a aucune information.",
+    "info_error_not": "&cCet objet n'est pas une tête de ce plugin.",
+    "info_error_head": "&cLa tête avec l'id &f%id% &cest introuvable.",
+
+    "save_error_name": "&cCe nom existe déjà pour cet objet, veuillez en choisir un autre.",
+    "save_success": "&aVous venez de sauvegarder l'objet &f%name%&a."
+  },
+
+  "category": {
+    "alphabet": "Alphabet",
+    "animals": "Animaux",
+    "blocks": "Blocs",
+    "decoration": "Décoration",
+    "food_drinks": "Nourriture et boissons",
+    "humans": "Humains",
+    "humanoid": "Humanoïdes",
+    "miscellaneous": "Divers",
+    "monsters": "Monstres",
+    "plants": "Plantes"
+  },
+
+  "inventory": {
+    "back": "&cRetour au menu principal",
+    "page": "&cPage %page%",
+    "heads": {
+      "name": "&cHead &8%count% têtes",
+      "item": {
+        "name": "&c&l%category%",
+        "lore": [
+          "&f%count% &7têtes"
+        ]
+      },
+      "refresh": {
+        "name": "&c&lActualiser",
+        "lore": [
+          "&8Cliquez pour actualiser la base de données des têtes"
+        ]
+      },
+      "informations": {
+        "name": "&e&lInformations",
+        "lore": [
+          "",
+          "&f%amount% &7têtes",
+          "&7Mis à jour le&8: &f%updated%",
+          "",
+          "&b/head give &8<&7id&8> &8[<&7quantité&8>] [<&7joueur&8>]",
+          "&b/head search &8<&7valeur&8>",
+          "",
+          "&8Crédit: &7minecraft-heads.com"
+        ]
+      }
+    },
+    "pagination": {
+      "name": "&c%category% &8%count% têtes",
+      "item": {
+        "name": "&f%name%",
+        "lore": [
+          "&8%category%",
+          "&8%tags%",
+          "&fID&8: &7%id%",
+          "",
+          "&f&nClic gauche&r&7 pour obtenir la tête",
+          "&f&nClic droit&r&7 pour afficher les informations"
+        ]
+      },
+      "search": {
+        "name": "&cRechercher des têtes",
+        "lore": [
+          "&7/head search <valeur>"
+        ]
+      }
+    },
+    "search": {
+      "name": "&cRecherche &8%count% têtes"
+    },
+    "players": {
+      "online": {
+        "title": "&aJoueurs en ligne &8%count%",
+        "name": "&a&lJoueurs en ligne",
+        "lore": [
+          "&7Affiche tous les joueurs en ligne",
+          "",
+          "&eCliquez pour afficher les joueurs hors ligne"
+        ]
+      },
+      "offline": {
+        "title": "&cJoueurs hors ligne &8%count%",
+        "name": "&c&lJoueurs hors ligne",
+        "lore": [
+          "&7Affiche tous les joueurs qui sont",
+          "&7déjà venus sur le serveur",
+          "",
+          "&eCliquez pour afficher les joueurs en ligne"
+        ]
+      },
+      "head": {
+        "name": "&f%player%",
+        "lore": [
+          "",
+          "&eCliquez pour obtenir la tête"
+        ]
+      },
+      "previous": {
+        "name": "&aPage précédente",
+        "lore": [
+          "&7Page &f%page%&8/&f%max%"
+        ]
+      },
+      "next": {
+        "name": "&aPage suivante",
+        "lore": [
+          "&7Page &f%page%&8/&f%max%"
+        ]
+      }
+    }
+  }
+}

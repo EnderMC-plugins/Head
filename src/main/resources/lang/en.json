@@ -1,0 +1,173 @@
+{
+  "messages": {
+    "prefix": "&8[&aHead&8] ",
+
+    "teleport_move": "&cYou must not move!",
+    "teleport_message": "&7Teleportation in &3%second% &7seconds!",
+    "teleport_error": "&cYou already have a teleportation in progress!",
+    "teleport_success": "&7Teleportation done!",
+    "inventory_clone_null": "&cThe inventory clone is null!",
+    "inventory_open_error": "&cAn error occurred while opening the inventory &6%id%&c.",
+
+    "time_day": "%02d %day% %02d %hour% %02d %minute% %02d %second%",
+    "time_hour": "%02d %hour% %02d %minute% %02d %second%",
+    "time_minute": "%02d %minute% %02d %second%",
+    "time_second": "%02d %second%",
+    "format_second": "second",
+    "format_seconds": "seconds",
+    "format_minute": "minute",
+    "format_minutes": "minutes",
+    "format_hour": "hour",
+    "format_hours": "hours",
+    "format_day": "day",
+    "format_days": "days",
+
+    "command_syntax_error": "&cYou must execute the command like this&7: &a%syntax%",
+    "command_no_permission": "&cYou do not have permission to run this command.",
+    "command_no_console": "&cOnly a player can execute this command.",
+    "command_no_arg": "&cCould not find a command with these arguments.",
+    "command_syntax_help": "&f%syntax% &7» &7%description%",
+
+    "description_help": "Show commands",
+    "description_version": "Show plugin version",
+    "description_reload": "Reload configuration files",
+    "description_give": "Give a head",
+    "description_search": "Search heads",
+    "description_info": "Get head information",
+    "description_save": "Save head information",
+    "description_random": "Get a random head",
+    "description_players": "Show the heads of all players",
+
+    "reload": "&aYou have just reloaded the configuration files.",
+    "refresh": "&aThe data is being updated, please wait.",
+    "give": "&aYou just got the head &f%name% &8(&7%id%&8)",
+    "give_head": "&aYou just got the head of &f%name%&a.",
+    "skin_not_found": "&cThe skin of &f%name% &ccould not be found.",
+    "not_found": "&cCannot find a head with the id&8: &f%id%",
+    "open_no_permission": "&cYou do not have permission to open this category.",
+
+    "info_messages": [
+      "&fCategory&8: &7%category%",
+      "&fTags&8: &7%tags%",
+      "&fID&8: &7%id%",
+      "&fWith zMenu&8: &7material: zhd:%id%"
+    ],
+    "info_copy": "&bClick here to copy the base64 code",
+    "info_hover": "&7Click here to copy the base64 code",
+    "info_error_air": "&cNo, the air has no information.",
+    "info_error_not": "&cThis item is not a head from this plugin.",
+    "info_error_head": "&cHead with id &f%id% &cwas not found.",
+
+    "save_error_name": "&cThe name already exists for this item, please select another one.",
+    "save_success": "&aYou just saved the item &f%name%&a."
+  },
+
+  "category": {
+    "alphabet": "Alphabet",
+    "animals": "Animals",
+    "blocks": "Blocks",
+    "decoration": "Decoration",
+    "food_drinks": "Food and Drinks",
+    "humans": "Humans",
+    "humanoid": "Humanoid",
+    "miscellaneous": "Miscellaneous",
+    "monsters": "Monsters",
+    "plants": "Plants"
+  },
+
+  "inventory": {
+    "back": "&cBack to main menu",
+    "page": "&cPage %page%",
+    "heads": {
+      "name": "&cHead &8%count% heads",
+      "item": {
+        "name": "&c&l%category%",
+        "lore": [
+          "&f%count% &7heads"
+        ]
+      },
+      "refresh": {
+        "name": "&c&lRefresh",
+        "lore": [
+          "&8Click to refresh the heads database"
+        ]
+      },
+      "informations": {
+        "name": "&e&lInformation",
+        "lore": [
+          "",
+          "&f%amount% &7heads",
+          "&7Updated at&8: &f%updated%",
+          "",
+          "&b/head give &8<&7id&8> &8[<&7amount&8>] [<&7player&8>]",
+          "&b/head search &8<&7value&8>",
+          "",
+          "&8Credit: &7minecraft-heads.com"
+        ]
+      }
+    },
+    "pagination": {
+      "name": "&c%category% &8%count% heads",
+      "item": {
+        "name": "&f%name%",
+        "lore": [
+          "&8%category%",
+          "&8%tags%",
+          "&fID&8: &7%id%",
+          "",
+          "&f&nLeft click&r&7 to get the head",
+          "&f&nRight click&r&7 to display information"
+        ]
+      },
+      "search": {
+        "name": "&cSearch for heads",
+        "lore": [
+          "&7/head search <value>"
+        ]
+      }
+    },
+    "search": {
+      "name": "&cSearch &8%count% heads"
+    },
+    "players": {
+      "online": {
+        "title": "&aOnline players &8%count%",
+        "name": "&a&lOnline players",
+        "lore": [
+          "&7Shows all players who are online",
+          "",
+          "&eClick to show the offline players"
+        ]
+      },
+      "offline": {
+        "title": "&cOffline players &8%count%",
+        "name": "&c&lOffline players",
+        "lore": [
+          "&7Shows all players who have ever",
+          "&7played on the server",
+          "",
+          "&eClick to show the online players"
+        ]
+      },
+      "head": {
+        "name": "&f%player%",
+        "lore": [
+          "",
+          "&eClick to get the head"
+        ]
+      },
+      "previous": {
+        "name": "&aPrevious page",
+        "lore": [
+          "&7Page &f%page%&8/&f%max%"
+        ]
+      },
+      "next": {
+        "name": "&aNext page",
+        "lore": [
+          "&7Page &f%page%&8/&f%max%"
+        ]
+      }
+    }
+  }
+}

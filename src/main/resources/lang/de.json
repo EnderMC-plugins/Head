@@ -1,0 +1,173 @@
+{
+  "messages": {
+    "prefix": "&8[&aHead&8] ",
+
+    "teleport_move": "&cDu darfst dich nicht bewegen!",
+    "teleport_message": "&7Teleport in &3%second% &7Sekunden!",
+    "teleport_error": "&cDu hast bereits einen laufenden Teleport!",
+    "teleport_success": "&7Teleport abgeschlossen!",
+    "inventory_clone_null": "&cDer Inventar-Klon ist null!",
+    "inventory_open_error": "&cBeim Öffnen des Inventars &6%id% &cist ein Fehler aufgetreten.",
+
+    "time_day": "%02d %day% %02d %hour% %02d %minute% %02d %second%",
+    "time_hour": "%02d %hour% %02d %minute% %02d %second%",
+    "time_minute": "%02d %minute% %02d %second%",
+    "time_second": "%02d %second%",
+    "format_second": "Sekunde",
+    "format_seconds": "Sekunden",
+    "format_minute": "Minute",
+    "format_minutes": "Minuten",
+    "format_hour": "Stunde",
+    "format_hours": "Stunden",
+    "format_day": "Tag",
+    "format_days": "Tage",
+
+    "command_syntax_error": "&cBenutze den Befehl so&7: &a%syntax%",
+    "command_no_permission": "&cDu hast keine Berechtigung für diesen Befehl.",
+    "command_no_console": "&cNur Spieler können diesen Befehl ausführen.",
+    "command_no_arg": "&cEs wurde kein Befehl mit diesen Argumenten gefunden.",
+    "command_syntax_help": "&f%syntax% &7» &7%description%",
+
+    "description_help": "Befehle anzeigen",
+    "description_version": "Plugin-Version anzeigen",
+    "description_reload": "Konfigurationsdateien neu laden",
+    "description_give": "Einen Kopf geben",
+    "description_search": "Köpfe suchen",
+    "description_info": "Kopf-Informationen anzeigen",
+    "description_save": "Kopf-Informationen speichern",
+    "description_random": "Einen zufälligen Kopf erhalten",
+    "description_players": "Köpfe aller Spieler anzeigen",
+
+    "reload": "&aDie Konfigurationsdateien wurden neu geladen.",
+    "refresh": "&aDie Daten werden aktualisiert, bitte warten.",
+    "give": "&aDu hast den Kopf &f%name% &8(&7%id%&8) &aerhalten.",
+    "give_head": "&aDu hast den Kopf von &f%name% &aerhalten.",
+    "skin_not_found": "&cDer Skin von &f%name% &ckonnte nicht gefunden werden.",
+    "not_found": "&cEs gibt keinen Kopf mit der ID&8: &f%id%",
+    "open_no_permission": "&cDu hast keine Berechtigung, diese Kategorie zu öffnen.",
+
+    "info_messages": [
+      "&fKategorie&8: &7%category%",
+      "&fTags&8: &7%tags%",
+      "&fID&8: &7%id%",
+      "&fMit zMenu&8: &7material: zhd:%id%"
+    ],
+    "info_copy": "&bKlicke hier, um den Base64-Code zu kopieren",
+    "info_hover": "&7Klicke hier, um den Base64-Code zu kopieren",
+    "info_error_air": "&cNein, Luft hat keine Informationen.",
+    "info_error_not": "&cDieses Item ist kein Kopf aus diesem Plugin.",
+    "info_error_head": "&cDer Kopf mit der ID &f%id% &cwurde nicht gefunden.",
+
+    "save_error_name": "&cDieser Name existiert bereits, bitte wähle einen anderen.",
+    "save_success": "&aDu hast das Item &f%name% &agespeichert."
+  },
+
+  "category": {
+    "alphabet": "Alphabet",
+    "animals": "Tiere",
+    "blocks": "Blöcke",
+    "decoration": "Dekoration",
+    "food_drinks": "Essen und Trinken",
+    "humans": "Menschen",
+    "humanoid": "Humanoide",
+    "miscellaneous": "Sonstiges",
+    "monsters": "Monster",
+    "plants": "Pflanzen"
+  },
+
+  "inventory": {
+    "back": "&cZurück zum Hauptmenü",
+    "page": "&cSeite %page%",
+    "heads": {
+      "name": "&cHead &8%count% Köpfe",
+      "item": {
+        "name": "&c&l%category%",
+        "lore": [
+          "&f%count% &7Köpfe"
+        ]
+      },
+      "refresh": {
+        "name": "&c&lAktualisieren",
+        "lore": [
+          "&8Klicke, um die Kopf-Datenbank zu aktualisieren"
+        ]
+      },
+      "informations": {
+        "name": "&e&lInformationen",
+        "lore": [
+          "",
+          "&f%amount% &7Köpfe",
+          "&7Aktualisiert am&8: &f%updated%",
+          "",
+          "&b/head give &8<&7id&8> &8[<&7anzahl&8>] [<&7spieler&8>]",
+          "&b/head search &8<&7suchbegriff&8>",
+          "",
+          "&8Credit: &7minecraft-heads.com"
+        ]
+      }
+    },
+    "pagination": {
+      "name": "&c%category% &8%count% Köpfe",
+      "item": {
+        "name": "&f%name%",
+        "lore": [
+          "&8%category%",
+          "&8%tags%",
+          "&fID&8: &7%id%",
+          "",
+          "&f&nLinksklick&r&7, um den Kopf zu erhalten",
+          "&f&nRechtsklick&r&7, um Informationen anzuzeigen"
+        ]
+      },
+      "search": {
+        "name": "&cNach Köpfen suchen",
+        "lore": [
+          "&7/head search <suchbegriff>"
+        ]
+      }
+    },
+    "search": {
+      "name": "&cSuche &8%count% Köpfe"
+    },
+    "players": {
+      "online": {
+        "title": "&aOnline-Spieler &8%count%",
+        "name": "&a&lOnline-Spieler",
+        "lore": [
+          "&7Zeigt alle Spieler, die online sind",
+          "",
+          "&eKlicke, um die Offline-Spieler anzuzeigen"
+        ]
+      },
+      "offline": {
+        "title": "&cOffline-Spieler &8%count%",
+        "name": "&c&lOffline-Spieler",
+        "lore": [
+          "&7Zeigt alle Spieler, die jemals",
+          "&7auf dem Server waren",
+          "",
+          "&eKlicke, um die Online-Spieler anzuzeigen"
+        ]
+      },
+      "head": {
+        "name": "&f%player%",
+        "lore": [
+          "",
+          "&eKlicke, um den Kopf zu erhalten"
+        ]
+      },
+      "previous": {
+        "name": "&aVorherige Seite",
+        "lore": [
+          "&7Seite &f%page%&8/&f%max%"
+        ]
+      },
+      "next": {
+        "name": "&aNächste Seite",
+        "lore": [
+          "&7Seite &f%page%&8/&f%max%"
+        ]
+      }
+    }
+  }
+}

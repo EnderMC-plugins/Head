@@ -43,14 +43,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class ZHeadManager extends ZUtils implements HeadManager {
+public class HeadManagerImpl extends ZUtils implements HeadManager {
 
     private final HeadPlugin plugin;
     private final Map<HeadCategory, List<Head>> heads = new HashMap<>();
     private final HeadSignature headSignature;
     private Date updatedAt = new Date();
 
-    public ZHeadManager(HeadPlugin plugin) {
+    public HeadManagerImpl(HeadPlugin plugin) {
         this.plugin = plugin;
         this.headSignature = NmsVersion.nmsVersion.isPdcVersion() ? new PDCSignature(plugin) : new NMSignature();
     }
@@ -310,8 +310,8 @@ public class ZHeadManager extends ZUtils implements HeadManager {
         configuration.set("items." + name + ".material", "zhd:" + head.getId());
         configuration.set("items." + name + ".url", head.getValue());
 
-        configuration.setComments("items." + name + ".material", Arrays.asList("Material to use with zMenu, you need zHead to use this. Documentation: https://docs.zmenu.dev/configurations/items#material"));
-        configuration.setComments("items." + name + ".url", Arrays.asList("URL to use with zMenu, you don't need zHead to use this. Documentation: https://docs.zmenu.dev/configurations/items#url"));
+        configuration.setComments("items." + name + ".material", Arrays.asList("Material to use with zMenu, you need Head to use this. Documentation: https://docs.zmenu.dev/configurations/items#material"));
+        configuration.setComments("items." + name + ".url", Arrays.asList("URL to use with zMenu, you don't need Head to use this. Documentation: https://docs.zmenu.dev/configurations/items#url"));
 
         try {
             configuration.save(file);

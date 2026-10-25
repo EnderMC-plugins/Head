@@ -12,7 +12,7 @@ public class CommandHeadRandom extends VCommand {
 
     public CommandHeadRandom(HeadPlugin plugin) {
         super(plugin);
-        this.setPermission(Permission.ZHEAD_RANDOM);
+        this.setPermission(Permission.HEAD_RANDOM);
         this.addSubCommand("random");
         this.setDescription(Message.DESCRIPTION_RANDOM);
         this.addOptionalArg("amount");

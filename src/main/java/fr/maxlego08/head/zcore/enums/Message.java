@@ -9,7 +9,7 @@ import java.util.Map;
 
 public enum Message {
 
-    PREFIX("§8(§6zHead§8) "),
+    PREFIX("§8[§aHead§8] "),
 
     TELEPORT_MOVE("§cYou must not move!"),
     TELEPORT_MESSAGE("§7Teleportation in §3%second% §7seconds!"),
@@ -64,9 +64,10 @@ public enum Message {
     DESCRIPTION_INFO("Get head informations"),
     DESCRIPTION_SAVE("Save head informations"),
     DESCRIPTION_RANDOM("Get a random head"),
+    DESCRIPTION_PLAYERS("Show the heads of all players"),
 
     INFO_ERROR_AIR("§cNo, the air has no information."),
-    INFO_ERROR_NOT("§cThis item is not a zHead head."),
+    INFO_ERROR_NOT("§cThis item is not a head from this plugin."),
     INFO_ERROR_HEAD("§cHead with id §f%id% §cwas not found."),
 
     SAVE_ERROR_NAME("§cThe name already exists for this item, please select another one."),
@@ -75,6 +76,7 @@ public enum Message {
     OPEN_NO_PERMISSION("§cYou do not have permission to open this category"),
 
     GIVE_HEAD("§aYou just got the player’s head §f%name%§a."),
+    SKIN_NOT_FOUND("§cThe skin of §f%name% §ccould not be found."),
 
     ;
 

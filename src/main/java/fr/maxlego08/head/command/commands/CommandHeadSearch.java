@@ -12,7 +12,7 @@ public class CommandHeadSearch extends VCommand {
 
     public CommandHeadSearch(HeadPlugin plugin) {
         super(plugin);
-        this.setPermission(Permission.ZHEAD_SEARCH);
+        this.setPermission(Permission.HEAD_SEARCH);
         this.addSubCommand("search");
         this.setDescription(Message.DESCRIPTION_SEARCH);
         this.addRequireArg("value", (a, args) -> args.length == 2 && args[1].length() >= 1 ? plugin.getHeadManager().searchHeads(args[1]) : new ArrayList<>());

@@ -13,7 +13,7 @@ public class CommandPlayerHead extends VCommand {
 
     public CommandPlayerHead(HeadPlugin plugin) {
         super(plugin);
-        this.setPermission(Permission.ZHEAD_PLAYER_HEAD);
+        this.setPermission(Permission.HEAD_PLAYER_HEAD);
         this.onlyPlayers();
         this.addRequireArg("player");
     }

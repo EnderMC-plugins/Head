@@ -4,7 +4,7 @@ import org.bukkit.inventory.ItemStack;
 
 public interface HeadSignature {
 
-    String KEY = "ZHEAD-ITEM";
+    String KEY = "HEAD-ITEM";
 
     ItemStack sign(ItemStack itemStack, Head head);
 

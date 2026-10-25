@@ -1,8 +1,7 @@
-name: zHead
-author: Maxlego08
+name: Head
+authors: [Maxlego08, herrlamatv]
 main: fr.maxlego08.head.HeadPlugin
-website: https://groupez.dev
 description: Simple Head Plugin
-version: ${version}
+version: ${project.version}
 api-version: 1.13
 commands:

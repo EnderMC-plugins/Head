@@ -4,16 +4,16 @@ import dev.faststats.bukkit.BukkitContext;
 import fr.maxlego08.head.api.HeadManager;
 import fr.maxlego08.head.command.commands.CommandHead;
 import fr.maxlego08.head.command.commands.CommandPlayerHead;
+import fr.maxlego08.head.command.commands.CommandPlayerHeadStatic;
 import fr.maxlego08.head.inventory.inventories.InventoryHeadPagination;
 import fr.maxlego08.head.inventory.inventories.InventoryHeadSearch;
 import fr.maxlego08.head.inventory.inventories.InventoryHeads;
+import fr.maxlego08.head.inventory.inventories.InventoryPlayers;
 import fr.maxlego08.head.placeholder.LocalPlaceholder;
 import fr.maxlego08.head.save.Config;
-import fr.maxlego08.head.save.MessageLoader;
 import fr.maxlego08.head.zcore.ZPlugin;
 import fr.maxlego08.head.zcore.enums.EnumInventory;
 import fr.maxlego08.head.zcore.utils.plugins.Metrics;
-import fr.maxlego08.head.zcore.utils.plugins.VersionChecker;
 import org.bukkit.plugin.ServicePriority;
 
 import java.io.BufferedReader;
@@ -40,21 +40,21 @@ public class HeadPlugin extends ZPlugin {
     public void onEnable() {
 
         LocalPlaceholder placeholder = LocalPlaceholder.getInstance();
-        placeholder.setPrefix("zhead");
+        placeholder.setPrefix("head");
 
         this.preEnable();
 
         this.saveDefaultConfig();
-        this.headManager = new ZHeadManager(this);
+        this.headManager = new HeadManagerImpl(this);
 
-        this.registerCommand("zhead", new CommandHead(this), "head", "zhd");
-        this.registerCommand("playerhead", new CommandPlayerHead(this), "ph");
+        this.registerCommand("head", new CommandHead(this));
+        this.registerCommand("skull", new CommandPlayerHead(this));
+        this.registerCommand("skullstatic", new CommandPlayerHeadStatic(this));
         this.registerInventory(EnumInventory.HEADS, new InventoryHeads());
         this.registerInventory(EnumInventory.HEADS_PAGINATION, new InventoryHeadPagination());
         this.registerInventory(EnumInventory.SEARCH, new InventoryHeadSearch());
+        this.registerInventory(EnumInventory.PLAYERS, new InventoryPlayers());
         this.getServer().getServicesManager().register(HeadManager.class, this.headManager, this, ServicePriority.Highest);
-
-        this.addSave(new MessageLoader(this));
 
         this.headManager.downloadHead(isDateBeforeLimit(new File(getDataFolder(), "date.txt"), LocalDateTime.of(2025, 2, 12, 0, 0, 0)));
 
@@ -64,8 +64,6 @@ public class HeadPlugin extends ZPlugin {
         this.headManager.registerPlaceholders();
 
         new Metrics(this, 21364);
-        VersionChecker versionChecker = new VersionChecker(this, 317);
-        versionChecker.useLastVersion();
         this.context.ready();
 
         this.postEnable();

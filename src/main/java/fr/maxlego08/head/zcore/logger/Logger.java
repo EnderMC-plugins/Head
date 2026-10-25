@@ -46,11 +46,11 @@ public class Logger {
     }
 
     public void log(String message, LogType type) {
-        Bukkit.getConsoleSender().sendMessage("§8[§e" + prefix + "§8] " + type.getColor() + getColoredMessage(message));
+        Bukkit.getConsoleSender().sendMessage("§8[§a" + prefix + "§8] " + type.getColor() + getColoredMessage(message));
     }
 
     public void log(String message) {
-        Bukkit.getConsoleSender().sendMessage("§8[§e" + prefix + "§8] §e" + getColoredMessage(message));
+        Bukkit.getConsoleSender().sendMessage("§8[§a" + prefix + "§8] §e" + getColoredMessage(message));
     }
 
     public void log(String message, Object... args) {

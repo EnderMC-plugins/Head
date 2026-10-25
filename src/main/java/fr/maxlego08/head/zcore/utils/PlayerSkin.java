@@ -4,14 +4,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import fr.maxlego08.head.zcore.utils.nms.NmsVersion;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+import org.bukkit.profile.PlayerProfile;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -92,6 +97,40 @@ public class PlayerSkin {
 		} catch (IOException e) {
 			System.err.println("Could not get skin data from session servers!");
 			e.printStackTrace();
+			return null;
+		}
+	}
+
+	/**
+	 * Returns the url of the current skin of the player, or null if it cannot be found.
+	 * The profile of the server is used first, then the Mojang servers. Can block, use it async.
+	 */
+	@SuppressWarnings("deprecation")
+	public static String getSkinUrl(OfflinePlayer offlinePlayer) {
+		try {
+			Player player = offlinePlayer.getPlayer();
+			PlayerProfile profile = player != null ? player.getPlayerProfile() : offlinePlayer.getPlayerProfile().update().get(10, TimeUnit.SECONDS);
+			URL skin = profile.getTextures().getSkin();
+			if (skin != null) return skin.toString();
+		} catch (Throwable ignored) {
+			// No PlayerProfile API before 1.18.1, or the Mojang servers did not answer
+		}
+
+		// On offline mode servers the uuid is not the Mojang one, so we search with the name
+		try {
+			String uuid;
+			try (InputStreamReader reader = new InputStreamReader(new URL("https://api.mojang.com/users/profiles/minecraft/" + offlinePlayer.getName()).openStream(), StandardCharsets.UTF_8)) {
+				uuid = new JsonParser().parse(reader).getAsJsonObject().get("id").getAsString();
+			}
+
+			String texture;
+			try (InputStreamReader reader = new InputStreamReader(new URL("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid).openStream(), StandardCharsets.UTF_8)) {
+				texture = new JsonParser().parse(reader).getAsJsonObject().getAsJsonArray("properties").get(0).getAsJsonObject().get("value").getAsString();
+			}
+
+			String json = new String(Base64.getDecoder().decode(texture), StandardCharsets.UTF_8);
+			return new JsonParser().parse(json).getAsJsonObject().getAsJsonObject("textures").getAsJsonObject("SKIN").get("url").getAsString();
+		} catch (Exception exception) {
 			return null;
 		}
 	}

@@ -17,7 +17,7 @@ public class CommandHeadInfo extends VCommand {
 
     public CommandHeadInfo(HeadPlugin plugin) {
         super(plugin);
-        this.setPermission(Permission.ZHEAD_INFO);
+        this.setPermission(Permission.HEAD_INFO);
         this.addSubCommand("info", "i");
         this.setDescription(Message.DESCRIPTION_INFO);
         this.onlyPlayers();
